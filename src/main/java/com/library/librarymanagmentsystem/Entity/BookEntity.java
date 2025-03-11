@@ -1,6 +1,7 @@
 package com.library.librarymanagmentsystem.Entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,7 +21,6 @@ public class BookEntity {
     private String author;
     @Column(name  ="publicationyear")
     private LocalDate publicationyear;
-
     public int getId() {
         return id;
     }

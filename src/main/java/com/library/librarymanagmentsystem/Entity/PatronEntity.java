@@ -1,9 +1,16 @@
 package com.library.librarymanagmentsystem.Entity;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 
 
 
@@ -17,6 +24,9 @@ public class PatronEntity {
     private String name;
     @Column(name  ="contactInfo")
     private String contactInfo;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "book_id")
+    private List<BookEntity> borrowedBooks;
     public int getId() {
         return id;
     }
